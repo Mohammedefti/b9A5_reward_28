@@ -63,6 +63,7 @@
         </div>
       </div>
       <div class="bg-green-100 text-green-700 px-3 py-1 rounded-full">
+        <!-- here is the problem -->
         <span id="available-seat" >40</span>
         <span>Seats</span>
       </div>
@@ -310,7 +311,9 @@
                     <h3 class="flex justify-between">
                         <p class="flex">
                             <span>Seat</span>
-                            <span id="total-booked" class="bg-primary w-4 h-4 flex justify-center items-center font-normal rounded-full text-sm">0</span>
+                            <!-- here also -->
+                            <span id="total-booked" 
+                            class="bg-primary w-4 h-4 flex justify-center items-center font-normal rounded-full text-sm">0</span>
                         </p>
                         <p>Class</p>
                         <p>Price</p>
@@ -326,13 +329,13 @@
                     flex justify-between ">
                         <p>Total Price</p>
                         <p><span>BDT:</span>
-                        <span>****</span></p>
+                        <span id="total-price">****</span></p>
                     </div>
                     <div class="border-b-2 my-4 border-dashed"></div>
                     <div class="flex items-center gap-2 border-y-2 py-2 border-dashed text-lg font-semibold justify-between">
-                        <input type="text" disabled 
-                        class="input my-5 w-full input-primary border-primary" placeholder="have a coupon?">
-                        <button class="btn bg-primary" disabled>Apply</button>
+                        <input disabled  id="coupon-field" type="text" 
+                        class="input my-5 w-full input-primary border-primary" placeholder="have a coupon?" >
+                        <button id="coupon-btn" class="btn bg-primary"  disabled>Apply</button>
                     </div>
                     <div class="text-lg my-5
                     flex justify-between ">
