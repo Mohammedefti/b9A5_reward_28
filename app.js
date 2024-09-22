@@ -7,6 +7,8 @@ const couponInputEl = document.getElementById("coupon-field");
 const couponBtnEl = document.getElementById("coupon-btn");
 const defaultTextEl = document.getElementById('default-text');
 const grandTotalEl = document.getElementById('grand-total');
+const phoneNumberEl = document.getElementById("phone-number");
+const nextButtonEl = document.getElementById("next-btn") 
 
 
 
@@ -53,8 +55,8 @@ function handleSelectSeat(event) {
         
         // active coupon button
         if (selectedSeat.length > 3) {
-            couponInputEl.removeAttribute('disabled');
-            couponBtnEl.removeAttribute('disabled');
+            couponInputEl.removeAttribute("disabled");
+            couponBtnEl.removeAttribute("disabled");
     
          }
          }else{
@@ -69,10 +71,10 @@ document.getElementById("coupon-btn").addEventListener("click", function () {
     let couponSave = 0;
 
 // problem
-    // if (couponInputValue !== "NEW50" || couponInputValue !== "Couple 20") {
-    //     alert("Your Provided Coupon is not valid");
-    //     return;
-    // } 
+    if (couponInputValue !== "NEW50" && couponInputValue !== "Couple 20") {
+        alert("Your Provided Coupon is not valid");
+        return;
+    } 
 
     // problem (solved)
     if (couponInputValue ==="NEW50") {
@@ -81,13 +83,28 @@ document.getElementById("coupon-btn").addEventListener("click", function () {
         couponSave = totalPrice * .20;
     }
 
+    // show coupon price
+    const showCouponPriceEl =  document.getElementById("show-coupon-price");
+    showCouponPriceEl.innerHTML = `
+    <p>Discount</p>
+         <p> <span>-BDT:</span>
+         <span>${couponSave.toFixed(2)}</span>
+                      </p>`
     const grandTotalValue = totalPrice - couponSave;
     grandTotalEl.innerText = grandTotalValue.toFixed(2);
 })
 
     
     
-
+// phone number
+phoneNumberEl.addEventListener('input',function (e) {
+   const inputValue = e.target.value;
+   if (inputValue.length >= 11) {
+    nextButtonEl.removeAttribute("disabled");
+   }  else{
+    nextButtonEl.setAttribute("disabled")
+   }
+})
 
 
 

@@ -332,7 +332,10 @@
                         <span id="total-price">****</span></p>
                     </div>
                     <div class="border-b-2 my-4 border-dashed"></div>
-                    <div class="flex items-center gap-2 border-y-2 py-2 border-dashed text-lg font-semibold justify-between">
+                    <div
+                    id="show-coupon-price"
+                    class="flex items-center gap-2 border-y-2 py-2 border-dashed text-lg font-semibold justify-between">
+                    
                         <input disabled  id="coupon-field" type="text" 
                         class="input my-5 w-full input-primary border-primary" placeholder="have a coupon?" >
                         <button id="coupon-btn" class="btn bg-primary"  disabled>Apply</button>
@@ -359,7 +362,7 @@
                         <div class="label">
                           <span class="label-text font-bold text-base">Phone Number</span>
                         </div>
-                        <input type="text" placeholder="Enter Phone Number" class="input input-bordered w-full " />
+                        <input id="phone-number" type="text" placeholder="Enter Phone Number" class="input input-bordered w-full " />
                         <div class="label">
                         </div>
                       </label>
@@ -371,7 +374,7 @@
                         <div class="label">
                         </div>
                       </label>
-                      <button  onclick="my_modal_1.showModal()" class="btn bg-primary mt-5 text-lg text-white uppercase w-full">
+                      <button id="next-btn" disabled  onclick="my_modal_1.showModal()" class="btn bg-primary mt-5 text-lg text-white uppercase w-full">
                         Next
                      </button>
                       <!-- Open the modal using ID.showModal() method -->
